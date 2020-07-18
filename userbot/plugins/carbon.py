@@ -152,7 +152,7 @@ async def carbon_api(e):
 
          file,
 
-         caption="<< Here's your carbon, \n Carbonised by [FRIDAY](https://www.github.com/midhunkm1294-bit/FRIDAY)>> ",
+         caption="<< Here's your carbon, \n Carbonised by [PYDROID](https://www.github.com/IamArjun078/PYDROIDUSERBOT)>> ",
 
          force_document=True,
 
@@ -160,7 +160,7 @@ async def carbon_api(e):
 
          )
 
-   os.remove('./FRIDAY.png')
+   os.remove('./PYDROID.png')
 
    driver.quit()
 
