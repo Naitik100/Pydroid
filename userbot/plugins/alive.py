@@ -2,29 +2,29 @@
 #IMG CREDITS: @WhySooSerious
 import asyncio
 from telethon import events
-from uniborg.util import admin_cmd
-from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
-PM_IMG = "https://telegra.ph/file/717b3eff2ba34d1de6b98.png"
-pm_caption = "`FRIDAY IS:` **ONLINE**\n\n"
-pm_caption += "**SYSTEM STATUS**\n"
-pm_caption += "`TELETHON VERSION:` **6.0.9**\n`Python:` **3.7.4**\n"
-pm_caption += "`DATABASE STATUS:` **Functional**\n"
-pm_caption += "**Current Branch** : `master`\n"
-pm_caption += "**Friday OS** : `3.14`\n"
-pm_caption += "**Current Sat** : `StarkGangSat-2.25`\n"
-pm_caption += f"**My Boss** : {DEFAULTUSER} \n"
-pm_caption += "**Heroku Database** : `AWS - Working Properly`\n\n"
-pm_caption += "**License** : [MIT Licence](github.com/StarkGang/FridayUserbot/blob/master/LICENSE)\n"
-pm_caption += "Copyright : By [StarkGang@Github](GitHub.com/StarkGang)\n"
-pm_caption += " [Deploy FridayUserbot](https://telegra.ph/FRIDAY-06-15)"
+from platform import uname
+from userbot import ALIVE_NAME
+from userbot.utils import admin_cmd
+
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+ALIVE_IMG = "https://telegra.ph/file/78bd74ded58f3f30a4f7c.jpg"
+ALIVE_caption = "`PYDROID USERBOT IS:` **ONLINE**\n\n"
+ALIVE_caption += "**SYSTEM STATUS**\n\n"
+ALIVE_caption += "`TELETHON VERSION:` **6.0.9**\n`Python:` **3.7.4**\n\n"
+ALIVE_caption += "`DATABASE STATUS:` **Functional**\n\n"
+ALIVE_caption += "**Current Branch** : `master`\n\n"
+ALIVE_caption += "**Friday OS** : `3.14`\n\n"
+ALIVE_caption += "**Current Sat** : `PydroidSat-2.25`\n\n"
+ALIVE_caption += f"**My Boss** : {DEFAULTUSER} \n\n"
+ALIVE_caption += "**Heroku Database** : `AWS - Working Properly`\n\n"
+ALIVE_caption += "**License** : Mit License \n\n"
+ALIVE_caption += "Copyright By [IamArjun078@Github](Github.com/IamArjun078)\n\n"
+ALIVE_caption += "[Deploy Pydroid Bot](https://github.com/IamArjun078/PydroidUserbot/)"
 #@command(outgoing=True, pattern="^.alive$")
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
-    chat = await alive.get_chat()
-    await alive.delete()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
     await alive.delete() 
-    
+    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_caption)
